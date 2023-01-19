@@ -45,3 +45,6 @@ def about(request):
 
 def fighters(request):
     return render(request, "stats/fighters.html", {"title": "Fighters"})
+
+def api(request):
+    return render(request, "stats/api.html", {"title": "api"})
