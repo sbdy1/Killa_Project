@@ -6,5 +6,6 @@ urlpatterns = [
    path('', views.home, name = 'stats-home'),
    path('about/', views.about, name="stats-about"),
    path('fighters/', views.fighters, name="stats-fighters"),
-   path('api/', views.api, name="stats-api")
+   path('api/', views.api, name="stats-api"),
+   path('csv/', views.csv_data, name="stats-csv")
 ]

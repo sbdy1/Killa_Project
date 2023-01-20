@@ -1,5 +1,5 @@
 from django.shortcuts import render 
-
+from mma.views import get_csv_data
 posts = [
     {
         "author": "CoreyMs",
@@ -19,7 +19,7 @@ posts = [
                  "losses": 5,
                  "draws": 0
                 },
-      "height": "5'9",
+      "height": 5_9,
       "weight": 155,
       "reach": 74,
       "stance": "Southpaw",
@@ -48,3 +48,8 @@ def fighters(request):
 
 def api(request):
     return render(request, "stats/api.html", {"title": "api"})
+
+def csv_data(request):
+    data_list = get_csv_data()
+    context = {'data': data_list}
+    return render(request, 'stats/csv_data.html', context)
